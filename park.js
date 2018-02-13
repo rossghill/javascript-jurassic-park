@@ -12,6 +12,7 @@ Park.prototype.removeOfType = function(type) {
       this.enclosure.pop(dino);
     }
   }
+  return this.enclosure;
 }
 
 Park.prototype.dinosWithOffspringMoreThanTwo = function() {

@@ -28,20 +28,24 @@ beforeEach(function() {
     const actual = dinosaur.type;
     assert.strictEqual(actual, 'Stegosaurus');
   });
+
   it('dinosaur should have number of offspring', function() {
     const actual = dinosaur.no_of_offspring;
     assert.strictEqual(actual, 4);
   });
+
   it('park enclosure should start empty', function() {
     const actual = park.enclosure;
     assert.deepStrictEqual(actual, []);
   });
+
   it('park can add a dinosaur', function() {
     park.addDinosaurToEnclosure(dinosaur);
     park.addDinosaurToEnclosure(dinosaur2);
     const actual = park.enclosure.length;
     assert.strictEqual(actual, 2);
   });
+
   it('can remove all dinosaurs of a certain type', function() {
     park.addDinosaurToEnclosure(dinosaur);
     park.addDinosaurToEnclosure(dinosaur2);
@@ -49,11 +53,12 @@ beforeEach(function() {
     park.addDinosaurToEnclosure(dinosaur4);
     console.log(park.enclosure);
     park.removeOfType('T-Rex');
-    park.removeOfType('T-Rex');
+    // park.removeOfType('T-Rex');
     console.log(park.enclosure);
     const actual = park.enclosure.length;
-    assert.strictEqual(actual, 3);
+    assert.strictEqual(actual, 2);
   });
+
   it('can get dinosaurs with more than two offspring', function() {
     park.addDinosaurToEnclosure(dinosaur);
     park.addDinosaurToEnclosure(dinosaur2);
@@ -61,7 +66,5 @@ beforeEach(function() {
     park.addDinosaurToEnclosure(dinosaur4);
     const actual = park.dinosWithOffspringMoreThanTwo();
     assert.deepStrictEqual(actual, [ 'Stegosaurus', 'T-Rex' ]);
-  }
-
-)
+  });
 });
