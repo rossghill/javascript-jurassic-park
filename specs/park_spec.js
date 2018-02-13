@@ -59,8 +59,8 @@ beforeEach(function() {
     park.addDinosaurToEnclosure(dinosaur2);
     park.addDinosaurToEnclosure(dinosaur3);
     park.addDinosaurToEnclosure(dinosaur4);
-    const actual = park.dinosWithOffspringMoreThanTwo().length;
-    assert.strictEqual(actual, 2);
+    const actual = park.dinosWithOffspringMoreThanTwo();
+    assert.deepStrictEqual(actual, [ 'Stegosaurus', 'T-Rex' ]);
   }
 
 )
