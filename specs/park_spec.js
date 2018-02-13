@@ -50,8 +50,18 @@ beforeEach(function() {
     console.log(park.enclosure);
     park.removeOfType('T-Rex');
     park.removeOfType('T-Rex');
-      console.log(park.enclosure);
+    console.log(park.enclosure);
     const actual = park.enclosure.length;
     assert.strictEqual(actual, 3);
   });
+  it('can get dinosaurs with more than two offspring', function() {
+    park.addDinosaurToEnclosure(dinosaur);
+    park.addDinosaurToEnclosure(dinosaur2);
+    park.addDinosaurToEnclosure(dinosaur3);
+    park.addDinosaurToEnclosure(dinosaur4);
+    const actual = park.dinosWithOffspringMoreThanTwo().length;
+    assert.strictEqual(actual, 2);
+  }
+
+)
 });
